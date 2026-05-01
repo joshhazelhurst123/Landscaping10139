@@ -1,4 +1,4 @@
-export const API_URL = "https://YOUR_API_ID.execute-api.YOUR_REGION.amazonaws.com/prod/bookings";
+export const API_URL = "https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com/prod/bookings";
 
 export async function createBooking(data) {
   const res = await fetch(API_URL, {
