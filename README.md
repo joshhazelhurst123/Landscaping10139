@@ -12,3 +12,17 @@ Welcome to Landscaping 101! This project is designed to provide resources, tutor
 To get started, explore our resources and community forums. Don't hesitate to reach out if you have questions or need assistance!
 
 Happy landscaping!
+
+# Landscaping Booking Frontend
+
+A simple booking form UI built with React and deployed using AWS Amplify.
+
+## Commands
+
+npm install  
+npm start  
+npm run build  
+
+## Deployment
+
+Push to GitHub → Amplify builds automatically.
