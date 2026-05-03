@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { createBooking } from "./api";
 
+const [availableTimes, setAvailableTimes] = useState([]);
+
+useEffect(() => {
+  fetch("YOUR_LAMBDA_API_URL")
+    .then(res => res.json())
+    .then(data => setAvailableTimes(data.available));
+}, []);
+
 const initialState = {
   customerName: "",
   customerEmail: "",
@@ -96,5 +104,21 @@ function BookingForm() {
     </div>
   );
 }
+
+<label>Choose a time:</label>
+<select
+  name="preferredDate"
+  value={formData.preferredDate}
+  onChange={handleChange}
+  required
+>
+  <option value="">Select a time</option>
+  {availableTimes.map(time => (
+    <option key={time} value={time}>
+      {new Date(time).toLocaleString()}
+    </option>
+  ))}
+</select>
+
 
 export default BookingForm;
