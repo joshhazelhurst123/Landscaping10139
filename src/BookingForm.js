@@ -101,24 +101,29 @@ function BookingForm() {
           {status.message}
         </div>
       )}
+        <label>Choose a time:</label>
+      <select
+        name="preferredDate"
+        value={formData.preferredDate}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select a time</option>
+        {availableTimes.map(time => (
+          <option key={time} value={time}>
+            {new Date(time).toLocaleString()}
+          </option>
+        ))}
+      </select>
+
+      {status && (
+        <div className={`status ${status.type}`}>
+          {status.message}
+        </div>
+      )}
     </div>
   );
 }
 
-<label>Choose a time:</label>
-<select
-  name="preferredDate"
-  value={formData.preferredDate}
-  onChange={handleChange}
-  required
->
-  <option value="">Select a time</option>
-  {availableTimes.map(time => (
-    <option key={time} value={time}>
-      {new Date(time).toLocaleString()}
-    </option>
-  ))}
-</select>
-
-
 export default BookingForm;
+
