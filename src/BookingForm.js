@@ -1,13 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createBooking } from "./api";
-
-const [availableTimes, setAvailableTimes] = useState([]);
-
-useEffect(() => {
-  fetch("YOUR_LAMBDA_API_URL")
-    .then(res => res.json())
-    .then(data => setAvailableTimes(data.available));
-}, []);
 
 const initialState = {
   customerName: "",
@@ -20,6 +12,15 @@ function BookingForm() {
   const [form, setForm] = useState(initialState);
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [availableTimes, setAvailableTimes] = useState([]);
+
+  // Load available times from your Lambda
+  useEffect(() => {
+    fetch("YOUR_LAMBDA_API_URL")
+      .then(res => res.json())
+      .then(data => setAvailableTimes(data.available))
+      .catch(err => console.error("Error loading times:", err));
+  }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -45,6 +46,7 @@ function BookingForm() {
   return (
     <div className="card">
       <h2>Book a Service</h2>
+
       <form onSubmit={handleSubmit} className="form">
         <label>
           Name
@@ -81,14 +83,20 @@ function BookingForm() {
         </label>
 
         <label>
-          Preferred Date
-          <input
+          Choose a Time
+          <select
             name="preferredDate"
-            type="date"
             value={form.preferredDate}
             onChange={handleChange}
             required
-          />
+          >
+            <option value="">Select a time</option>
+            {availableTimes.map(time => (
+              <option key={time} value={time}>
+                {new Date(time).toLocaleString()}
+              </option>
+            ))}
+          </select>
         </label>
 
         <button type="submit" disabled={loading}>
@@ -101,29 +109,10 @@ function BookingForm() {
           {status.message}
         </div>
       )}
-        <label>Choose a time:</label>
-      <select
-        name="preferredDate"
-        value={formData.preferredDate}
-        onChange={handleChange}
-        required
-      >
-        <option value="">Select a time</option>
-        {availableTimes.map(time => (
-          <option key={time} value={time}>
-            {new Date(time).toLocaleString()}
-          </option>
-        ))}
-      </select>
-
-      {status && (
-        <div className={`status ${status.type}`}>
-          {status.message}
-        </div>
-      )}
     </div>
   );
 }
 
 export default BookingForm;
+
 
