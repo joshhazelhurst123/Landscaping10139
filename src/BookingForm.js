@@ -15,12 +15,13 @@ function BookingForm() {
   const [availableTimes, setAvailableTimes] = useState([]);
 
   // Load available times from your Lambda
-  useEffect(() => {
-    fetch("YOUR_LAMBDA_API_URL")
-      .then(res => res.json())
-      .then(data => setAvailableTimes(data.available))
-      .catch(err => console.error("Error loading times:", err));
-  }, []);
+useEffect(() => {
+  fetch("https://gc3h85wvc7.execute-api.us-east-1.amazonaws.com/availability")
+    .then(res => res.json())
+    .then(data => setAvailableTimes(data.available))
+    .catch(err => console.error("Error loading times:", err));
+}, []);
+
 
   function handleChange(e) {
     const { name, value } = e.target;
