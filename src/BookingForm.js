@@ -112,6 +112,24 @@ useEffect(() => {
       )}
     </div>
   );
+
+useEffect(() => {
+  fetch("https://gc3h85wvc7.execute-api.us-east-1.amazonaws.com/availability")
+    .then(res => res.json())
+    .then(data => setSlots(data.available));
+}, []);
+const [slots, setSlots] = useState({});
+{Object.entries(slots).map(([day, times]) => (
+  <optgroup key={day} label={day}>
+    {times.map(slot => (
+      <option key={slot.iso} value={slot.iso}>
+        {slot.formatted}
+      </option>
+    ))}
+  </optgroup>
+))}
+
+
 }
 
 export default BookingForm;
