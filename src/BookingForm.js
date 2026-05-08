@@ -138,7 +138,7 @@ function BookingForm() {
     </select>
   );
 }
-
+}
 export default BookingForm;
 
 
