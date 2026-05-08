@@ -113,25 +113,34 @@ useEffect(() => {
     </div>
   );
 
-useEffect(() => {
-  fetch("https://gc3h85wvc7.execute-api.us-east-1.amazonaws.com/availability")
-    .then(res => res.json())
-    .then(data => setSlots(data.available));
-}, []);
-const [slots, setSlots] = useState({});
-{Object.entries(slots).map(([day, times]) => (
-  <optgroup key={day} label={day}>
-    {times.map(slot => (
-      <option key={slot.iso} value={slot.iso}>
-        {slot.formatted}
-      </option>
-    ))}
-  </optgroup>
-))}
+import { useEffect, useState } from "react";
 
+function BookingForm() {
+  const [slots, setSlots] = useState({});
 
+  useEffect(() => {
+    fetch("https://abc123.execute-api.us-east-1.amazonaws.com/default/bookingAvailability")
+      .then(res => res.json())
+      .then(data => setSlots(data.available));
+  }, []);
+
+  return (
+    <select>
+      {Object.entries(slots).map(([day, times]) => (
+        <optgroup key={day} label={day}>
+          {times.map(slot => (
+            <option key={slot.iso} value={slot.iso}>
+              {slot.formatted}
+            </option>
+          ))}
+        </optgroup>
+      ))}
+    </select>
+  );
 }
 
 export default BookingForm;
+
+
 
 
