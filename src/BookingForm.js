@@ -113,7 +113,7 @@ useEffect(() => {
     </div>
   );
 
-import { useEffect, useState } from "react";
+
 
 function BookingForm() {
   const [slots, setSlots] = useState({});
