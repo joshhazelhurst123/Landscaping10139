@@ -12,16 +12,15 @@ function BookingForm() {
   const [form, setForm] = useState(initialState);
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [availableTimes, setAvailableTimes] = useState([]);
+  const [slots, setSlots] = useState({});
 
-  // Load available times from your Lambda
-useEffect(() => {
-  fetch("https://gc3h85wvc7.execute-api.us-east-1.amazonaws.com/availability")
-    .then(res => res.json())
-    .then(data => setAvailableTimes(data.available))
-    .catch(err => console.error("Error loading times:", err));
-}, []);
-
+  // Load grouped slots from Lambda
+  useEffect(() => {
+    fetch("https://YOUR_API_GATEWAY_URL/availability")
+      .then(res => res.json())
+      .then(data => setSlots(data.available))
+      .catch(err => console.error("Error loading times:", err));
+  }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -92,10 +91,14 @@ useEffect(() => {
             required
           >
             <option value="">Select a time</option>
-            {availableTimes.map(time => (
-              <option key={time} value={time}>
-                {new Date(time).toLocaleString()}
-              </option>
+            {Object.entries(slots).map(([day, times]) => (
+              <optgroup key={day} label={day}>
+                {times.map(slot => (
+                  <option key={slot.iso} value={slot.iso}>
+                    {slot.formatted}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </label>
@@ -112,34 +115,10 @@ useEffect(() => {
       )}
     </div>
   );
-
-
-
-function BookingForm() {
-  const [slots, setSlots] = useState({});
-
-  useEffect(() => {
-    fetch("https://abc123.execute-api.us-east-1.amazonaws.com/default/bookingAvailability")
-      .then(res => res.json())
-      .then(data => setSlots(data.available));
-  }, []);
-
-  return (
-    <select>
-      {Object.entries(slots).map(([day, times]) => (
-        <optgroup key={day} label={day}>
-          {times.map(slot => (
-            <option key={slot.iso} value={slot.iso}>
-              {slot.formatted}
-            </option>
-          ))}
-        </optgroup>
-      ))}
-    </select>
-  );
 }
-}
+
 export default BookingForm;
+
 
 
 
