@@ -16,7 +16,7 @@ function BookingForm() {
 
   // Load grouped slots from Lambda
   useEffect(() => {
-    fetch("https://gc3h85wvc7.execute-api.us-east-1.amazonaws.com/bookingAvailability")
+    fetch("https://j10rrg72aa.execute-api.us-east-1.amazonaws.com/default/bookingAvailability")
       .then(res => res.json())
       .then(data => setSlots(data.available))
       .catch(err => console.error("Error loading times:", err));
