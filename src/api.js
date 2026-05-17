@@ -8,8 +8,17 @@ export async function createBooking(form) {
     }
   );
 
-  const raw = await res.json();
+  // If the response is HTML, throw a readable error
+  const text = await res.text();
 
-  // FIX: API Gateway sometimes returns a string body
+  // Detect HTML error page
+  if (text.startsWith("<")) {
+    throw new Error("API returned HTML instead of JSON — check the URL");
+  }
+
+  // Parse JSON safely
+  const raw = JSON.parse(text);
+
+  // Handle double-encoded JSON from API Gateway
   return typeof raw === "string" ? JSON.parse(raw) : raw;
 }
