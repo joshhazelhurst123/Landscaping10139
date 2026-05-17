@@ -1,16 +1,12 @@
-export async function createBooking(data) {
-  const res = await fetch(
-    "https://j10rrg72aa.execute-api.us-east-1.amazonaws.com/default/createBooking",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    }
-  );
+export async function createBooking(form) {
+  const res = await fetch("YOUR_BOOKING_LAMBDA_URL", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(form)
+  });
 
-  if (!res.ok) {
-    throw new Error("Failed to create booking");
-  }
+  const raw = await res.json();
 
-  return res.json();
+  // FIX: API Gateway sometimes returns a string body
+  return typeof raw === "string" ? JSON.parse(raw) : raw;
 }
