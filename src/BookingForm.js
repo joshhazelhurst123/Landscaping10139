@@ -14,7 +14,6 @@ function BookingForm() {
   const [loading, setLoading] = useState(false);
   const [slots, setSlots] = useState({});
 
-  // Load grouped slots from Lambda
   useEffect(() => {
     fetch("https://j10rrg72aa.execute-api.us-east-1.amazonaws.com/default/bookingAvailability")
       .then(res => res.json())
@@ -33,9 +32,13 @@ function BookingForm() {
     setStatus(null);
 
     try {
-      // FIX: ensure bookingId is always parsed correctly
       const raw = await createBooking(form);
+
+      console.log("🔥 RAW RESULT FROM createBooking():", raw);
+
       const result = typeof raw === "string" ? JSON.parse(raw) : raw;
+
+      console.log("🔥 PARSED RESULT:", result);
 
       setStatus({
         type: "success",
@@ -44,6 +47,7 @@ function BookingForm() {
 
       setForm(initialState);
     } catch (err) {
+      console.error("🔥 BOOKING ERROR:", err);
       setStatus({ type: "error", message: err.message });
     } finally {
       setLoading(false);
