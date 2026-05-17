@@ -33,8 +33,15 @@ function BookingForm() {
     setStatus(null);
 
     try {
-      const result = await createBooking(form);
-      setStatus({ type: "success", message: `Booking created: ${result.bookingId}` });
+      // FIX: ensure bookingId is always parsed correctly
+      const raw = await createBooking(form);
+      const result = typeof raw === "string" ? JSON.parse(raw) : raw;
+
+      setStatus({
+        type: "success",
+        message: `Booking created: ${result.bookingId}`
+      });
+
       setForm(initialState);
     } catch (err) {
       setStatus({ type: "error", message: err.message });
@@ -118,8 +125,3 @@ function BookingForm() {
 }
 
 export default BookingForm;
-
-
-
-
-
