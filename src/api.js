@@ -13,6 +13,8 @@ export async function createBooking(form) {
   // Read raw text first — because it might be HTML or JSON
   const text = await res.text();
 
+  console.log("RAW RESPONSE FROM API:", text); // ← THIS WILL EXPOSE THE TRUTH
+
   // Detect HTML error pages (wrong URL, CORS, etc.)
   if (text.trim().startsWith("<")) {
     throw new Error("API returned HTML instead of JSON — check the URL");
