@@ -50,12 +50,11 @@ async function callApi(url, options = {}) {
 export async function getAvailability() {
   const data = await callApi(ENDPOINTS.availability);
 
-  // data.available = { "Mon 20 May": [ { iso, formatted }, ... ] }
   const flat = Object.values(data.available)
     .flat()
     .map(slot => slot.iso);
 
-  return flat; // BookingForm expects a flat array
+  return flat;
 }
 
 export async function createBooking(form) {
