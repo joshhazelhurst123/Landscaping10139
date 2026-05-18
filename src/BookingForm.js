@@ -12,13 +12,17 @@ function BookingForm() {
   const [form, setForm] = useState(initialState);
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [slots, setSlots] = useState({});
+  const [availableTimes, setAvailableTimes] = useState([]);
 
+  // Load available times from your Lambda
   useEffect(() => {
-    fetch("https://j10rrg72aa.execute-api.us-east-1.amazonaws.com/default/bookingAvailability")
+    fetch("https://j10rrg72aa.execute-api.us-east-1.amazonaws.com/default/availability")
       .then(res => res.json())
-      .then(data => setSlots(data.available))
-      .catch(err => console.error("Error loading times:", err));
+      .then(data => {
+        console.log("🔥 Loaded availability:", data);
+        setAvailableTimes(data.available || []);
+      })
+      .catch(err => console.error("🔥 Error loading times:", err));
   }, []);
 
   function handleChange(e) {
@@ -31,14 +35,12 @@ function BookingForm() {
     setLoading(true);
     setStatus(null);
 
+    console.log("🔥 SUBMITTING FORM:", form);
+
     try {
-      const raw = await createBooking(form);
+      const result = await createBooking(form);
 
-      console.log("🔥 RAW RESULT FROM createBooking():", raw);
-
-      const result = typeof raw === "string" ? JSON.parse(raw) : raw;
-
-      console.log("🔥 PARSED RESULT:", result);
+      console.log("🔥 RAW RESULT FROM createBooking():", result);
 
       setStatus({
         type: "success",
@@ -48,7 +50,10 @@ function BookingForm() {
       setForm(initialState);
     } catch (err) {
       console.error("🔥 BOOKING ERROR:", err);
-      setStatus({ type: "error", message: err.message });
+      setStatus({
+        type: "error",
+        message: err.message || "Booking failed"
+      });
     } finally {
       setLoading(false);
     }
@@ -102,14 +107,10 @@ function BookingForm() {
             required
           >
             <option value="">Select a time</option>
-            {Object.entries(slots).map(([day, times]) => (
-              <optgroup key={day} label={day}>
-                {times.map(slot => (
-                  <option key={slot.iso} value={slot.iso}>
-                    {slot.formatted}
-                  </option>
-                ))}
-              </optgroup>
+            {availableTimes.map(time => (
+              <option key={time} value={time}>
+                {new Date(time).toLocaleString()}
+              </option>
             ))}
           </select>
         </label>
