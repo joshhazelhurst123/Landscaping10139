@@ -20,25 +20,12 @@ async function callApi(url, options = {}) {
   const text = await res.text();
   console.log(`[API] ${url} →`, text);
 
-  if (text.trim().startsWith("<")) {
-    throw new Error("API returned HTML instead of JSON — check the URL or CORS");
-  }
+  // Parse the outer API Gateway wrapper
+  let parsed = JSON.parse(text);
 
-  let parsed;
-  try {
-    parsed = JSON.parse(text);
-  } catch (err) {
-    console.error("[API] JSON parse error:", err);
-    throw new Error("Failed to parse JSON from API");
-  }
-
-  if (typeof parsed === "string") {
-    try {
-      parsed = JSON.parse(parsed);
-    } catch (err) {
-      console.error("[API] Nested JSON parse error:", err);
-      throw new Error("Failed to parse nested JSON from API");
-    }
+  // If API Gateway wrapped the real payload inside "body", unwrap it
+  if (parsed && typeof parsed.body === "string") {
+    parsed = JSON.parse(parsed.body);
   }
 
   return parsed;
