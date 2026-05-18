@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { createBooking } from "./api";
+import { getAvailability, createBooking } from "./api";
 
 const initialState = {
   customerName: "",
@@ -14,13 +14,11 @@ function BookingForm() {
   const [loading, setLoading] = useState(false);
   const [availableTimes, setAvailableTimes] = useState([]);
 
-  // Load available times from your Lambda
   useEffect(() => {
-    fetch("https://j10rrg72aa.execute-api.us-east-1.amazonaws.com/default/availability")
-      .then(res => res.json())
-      .then(data => {
-        console.log("🔥 Loaded availability:", data);
-        setAvailableTimes(data.available || []);
+    getAvailability()
+      .then(times => {
+        console.log("🔥 Loaded availability:", times);
+        setAvailableTimes(times);
       })
       .catch(err => console.error("🔥 Error loading times:", err));
   }, []);
@@ -39,8 +37,7 @@ function BookingForm() {
 
     try {
       const result = await createBooking(form);
-
-      console.log("🔥 RAW RESULT FROM createBooking():", result);
+      console.log("🔥 BOOKING RESULT:", result);
 
       setStatus({
         type: "success",
@@ -109,7 +106,7 @@ function BookingForm() {
             <option value="">Select a time</option>
             {availableTimes.map(time => (
               <option key={time} value={time}>
-                {new Date(time).toLocaleString()}
+                {new Date(time).toLocaleString("en-NZ")}
               </option>
             ))}
           </select>
