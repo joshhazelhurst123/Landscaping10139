@@ -4,6 +4,7 @@ import { getAvailability, createBooking } from "./api";
 export default function BookingForm() {
   const [slots, setSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState("");
+
   const [form, setForm] = useState({
     customerName: "",
     customerEmail: "",
@@ -11,17 +12,22 @@ export default function BookingForm() {
     preferredDate: ""
   });
 
-  // Load availability
+  // Load availability on mount
   useEffect(() => {
     async function load() {
       try {
-        const flatSlots = await getAvailability();
-        console.log("🔥 Loaded availability:", flatSlots);
-        setSlots(flatSlots);
+        const grouped = await getAvailability(); // returns { "Tue, 19 May": [iso1, iso2], ... }
+
+        // Flatten grouped availability into a simple array of ISO timestamps
+        const flat = Object.values(grouped).flat();
+
+        console.log("🔥 Flattened availability:", flat);
+        setSlots(flat);
       } catch (err) {
         console.error("🔥 Availability load error:", err);
       }
     }
+
     load();
   }, []);
 
@@ -31,6 +37,7 @@ export default function BookingForm() {
 
   function handleSlotChange(e) {
     const iso = e.target.value;
+
     console.log("🔥 Selected slot ISO:", iso);
 
     setSelectedSlot(iso);
@@ -46,7 +53,6 @@ export default function BookingForm() {
 
     try {
       const result = await createBooking(form);
-      console.log("🔥 BOOKING RESULT:", result);
 
       alert(
         result.bookingId
@@ -97,15 +103,16 @@ export default function BookingForm() {
             <option value="">-- Select a time --</option>
 
             {slots.map((iso) => {
-              const date = new Date(iso);
+              const date = new Date(iso); // always valid ISO
+
               const label = date.toLocaleString("en-NZ", {
+                timeZone: "Pacific/Auckland",
                 weekday: "short",
                 month: "short",
                 day: "numeric",
                 hour: "numeric",
-                minute: "numeric",
-                hour12: true,
-                timeZone: "Pacific/Auckland"
+                minute: "2-digit",
+                hour12: true
               });
 
               return (
