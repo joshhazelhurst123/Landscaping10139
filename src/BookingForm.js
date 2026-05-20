@@ -12,16 +12,17 @@ export default function BookingForm() {
     preferredDate: ""
   });
 
-  // Load availability on mount
+  // Load availability
   useEffect(() => {
     async function load() {
       try {
-        const grouped = await getAvailability(); // returns { "Tue, 19 May": [iso1, iso2], ... }
+        const grouped = await getAvailability(); 
+        console.log("🔥 Raw grouped availability:", grouped);
 
-        // Flatten grouped availability into a simple array of ISO timestamps
+        // Flatten grouped object into array of ISO timestamps
         const flat = Object.values(grouped).flat();
+        console.log("🔥 Flattened slots:", flat);
 
-        console.log("🔥 Flattened availability:", flat);
         setSlots(flat);
       } catch (err) {
         console.error("🔥 Availability load error:", err);
@@ -38,8 +39,6 @@ export default function BookingForm() {
   function handleSlotChange(e) {
     const iso = e.target.value;
 
-    console.log("🔥 Selected slot ISO:", iso);
-
     setSelectedSlot(iso);
     setForm((prev) => ({
       ...prev,
@@ -49,7 +48,6 @@ export default function BookingForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("🔥 SUBMITTING FORM:", form);
 
     try {
       const result = await createBooking(form);
