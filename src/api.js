@@ -37,9 +37,10 @@ async function callApi(url, options = {}) {
 export async function getAvailability() {
   const data = await callApi(ENDPOINTS.availability);
 
-  const flat = Object.values(data.available)
-    .flat()
-    .map(slot => slot.iso);
+  // data.available = { "Tue, 19 May": [iso1, iso2], ... }
+
+  // Flatten into a simple array of ISO timestamps
+  const flat = Object.values(data.available).flat();
 
   return flat;
 }
