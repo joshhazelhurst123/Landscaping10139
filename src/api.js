@@ -39,11 +39,6 @@ export async function getAvailability() {
 
   // data.available = { "Tue, 19 May": [iso1, iso2], ... }
 /** changed from flat array to a grouped object
-  // Flatten into a simple array of ISO timestamps
-  const flat = Object.values(data.available).flat();
-
-  return flat;
-
   */
 return data.available; // return grouped, not flattened
   
