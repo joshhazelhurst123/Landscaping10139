@@ -16,28 +16,6 @@ export default function BookingForm() {
 
   // Load availability
 
-  /**
-  useEffect(() => {
-    async function load() {
-      try {
-        const grouped = await getAvailability(); 
-        console.log("🔥 Raw grouped availability:", grouped);
-
-        // Flatten grouped object into array of ISO timestamps
-        const flat = Object.values(grouped).flat();
-        console.log("🔥 Flattened slots:", flat);
-
-        setSlots(flat);
-      } catch (err) {
-        console.error("🔥 Availability load error:", err);
-      }
-    }
-
-    load();
-  }, []);
-
-  */
-
   useEffect(() => {
   async function load() {
     try {
@@ -118,31 +96,6 @@ export default function BookingForm() {
           </select>
 
           <label>Select a Time Slot</label>
-/**      Replace your <select> with this grouped version:
-<select value={selectedSlot} onChange={handleSlotChange} required>
-            <option value="">-- Select a time --</option>
-
-            {slots.map((iso) => {
-              const date = new Date(iso); // always valid ISO
-
-              const label = date.toLocaleString("en-NZ", {
-                timeZone: "Pacific/Auckland",
-                weekday: "short",
-                month: "short",
-                day: "numeric",
-                hour: "numeric",
-                minute: "2-digit",
-                hour12: true
-              });
-
-              return (
-                <option key={iso} value={iso}>
-                  {label}
-                </option>
-              );
-            })}
-          </select>
-*/
 
  <select value={selectedSlot} onChange={handleSlotChange} required>
   <option value="">-- Select a time --</option>
