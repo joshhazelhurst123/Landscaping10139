@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getAvailability, createBooking } from "./api";
 
 export default function BookingForm() {
-  const [slots, setSlots] = useState([]);
+  //const [slots, setSlots] = useState([]);
+  const [slots, setSlots] = useState({});
+
   const [selectedSlot, setSelectedSlot] = useState("");
 
   const [form, setForm] = useState({
@@ -13,6 +15,8 @@ export default function BookingForm() {
   });
 
   // Load availability
+
+  /**
   useEffect(() => {
     async function load() {
       try {
@@ -31,6 +35,23 @@ export default function BookingForm() {
 
     load();
   }, []);
+
+  */
+
+  useEffect(() => {
+  async function load() {
+    try {
+      const grouped = await getAvailability();
+      console.log("🔥 Grouped availability:", grouped);
+      setSlots(grouped);
+    } catch (err) {
+      console.error("🔥 Availability load error:", err);
+    }
+  }
+
+  load();
+}, []);
+
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -97,7 +118,8 @@ export default function BookingForm() {
           </select>
 
           <label>Select a Time Slot</label>
-          <select value={selectedSlot} onChange={handleSlotChange} required>
+/**      Replace your <select> with this grouped version:
+<select value={selectedSlot} onChange={handleSlotChange} required>
             <option value="">-- Select a time --</option>
 
             {slots.map((iso) => {
@@ -120,7 +142,33 @@ export default function BookingForm() {
               );
             })}
           </select>
+*/
 
+ <select value={selectedSlot} onChange={handleSlotChange} required>
+  <option value="">-- Select a time --</option>
+
+  {Object.entries(slots).map(([dayLabel, isoList]) => (
+    <optgroup key={dayLabel} label={dayLabel}>
+      {isoList.map((iso) => {
+        const date = new Date(iso);
+
+        const label = date.toLocaleString("en-NZ", {
+          timeZone: "Pacific/Auckland",
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true
+        });
+
+        return (
+          <option key={iso} value={iso}>
+            {label}
+          </option>
+        );
+      })}
+    </optgroup>
+  ))}
+</select>
+             
           <button type="submit">Submit Booking</button>
         </form>
       </div>
