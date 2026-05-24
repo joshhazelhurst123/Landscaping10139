@@ -48,6 +48,20 @@ export default function BookingForm() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    // create a booking if there is a free time slow
+try {
+  const result = await createBooking(form);
+
+  if (result.error === "Time slot already booked") {
+    alert("Sorry — that time has just been booked. Please choose another slot.");
+    return;
+  }
+
+  alert(`Booking created! ID: ${result.bookingId}`);
+} catch (err) {
+  alert("Booking failed — see console");
+}
+  // there is a free booking so the booking will go ahead below.   
     try {
       const result = await createBooking(form);
 
