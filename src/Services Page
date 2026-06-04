@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -57,8 +58,8 @@
     <!-- Lawn Mowing (Instagram + Image #1) -->
     <div class="service">
         <!-- Instagram Image -->
-        <img src="https://scontent.cdninstagram.com/v/t51.2885-15/318735836_682997493529980_7138988983411259341_n.jpg" 
-             alt="Lawn mowing service - Instagram photo">
+        <img src="https://ts2.mm.bing.net/th?id=OIP.vtiMTbbDB6sbG2m-tFUqFgHaHa&pid=15.1&o=7&rm=3 
+             alt="Lawn mowing service ">
 
         <!-- Original Lawn Mowing Image -->
         <img src="https://ts2.mm.bing.net/th?id=OIP.QDi2MkAgrz4FGJf77o4-QAHaE8&pid=15.1&o=7&rm=3" 
