@@ -58,11 +58,11 @@
     <!-- Lawn Mowing (Instagram + Image #1) -->
     <div class="service">
         <!-- Instagram Image -->
-        <img src="https://ts2.mm.bing.net/th?id=OIP.vtiMTbbDB6sbG2m-tFUqFgHaHa&pid=15.1&o=7&rm=3 
+        <img src="https://ts4.mm.bing.net/th?id=OIP.bDoDgoDfYz7tN1dzRZDcRwHaE8&pid=15.1&o=7&rm=3" 
              alt="Lawn mowing service ">
 
         <!-- Original Lawn Mowing Image -->
-        <img src="https://ts2.mm.bing.net/th?id=OIP.QDi2MkAgrz4FGJf77o4-QAHaE8&pid=15.1&o=7&rm=3" 
+        <img src="https://ts2.mm.bing.net/th?id=OIP.53DR6i4wDCdCD2eIJLqVdwHaE8&pid=15.1&o=7&rm=3" 
              alt="Lawn mowing service">
 
         <h2>Lawn Mowing & Edging</h2>
@@ -77,7 +77,7 @@
 
     <!-- Hedge Trimming (Image #2) -->
     <div class="service">
-        <img src="https://ts2.mm.bing.net/th?id=OIP.JGwdto6G4YTHVs5FGvBnTQHaE6&pid=15.1&o=7&rm=3" 
+        <img src="https://ts3.mm.bing.net/th?id=OIP.gaCGxc7VAP3Xz1GvRbVyHAHaD4&pid=15.1&o=7&rm=3" 
              alt="Hedge trimming service">
         <h2>Hedge Trimming & Shaping</h2>
         <p>Neat hedges instantly lift the look of your property.</p>
@@ -104,7 +104,7 @@
 
     <!-- Section Tidy-Up (Image #2) -->
     <div class="service">
-        <img src="https://ts2.mm.bing.net/th?id=OIP.BurYD0_SveUBn6TsHdLZAQHaE7&pid=15.1&o=7&rm=3" 
+        <img src="https://images.pexels.com/photos/29288279/pexels-photo-29288279.jpeg" 
              alt="Section tidy-up service">
         <h2>Section Tidy‑Ups</h2>
         <p>Ideal for overgrown or neglected properties.</p>
@@ -130,7 +130,7 @@
 
     <!-- Green Waste Removal (Image #3) -->
     <div class="service">
-        <img src="https://ts4.mm.bing.net/th?id=OIP.Szfnu-0n7x-_X4Qe3cWYYQHaE8&pid=15.1&o=7&rm=3" 
+        <img src="https://images.pexels.com/photos/17577525/pexels-photo-17577525.jpeg" 
              alt="Green waste removal service">
         <h2>Green Waste Removal</h2>
         <p>Fast, clean, and environmentally responsible disposal.</p>
