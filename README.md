@@ -26,3 +26,5 @@ npm run build
 ## Deployment
 
 Push to GitHub → Amplify builds automatically.
+
+redeploy trigger
