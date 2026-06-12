@@ -1,13 +1,14 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BookingForm from "./BookingForm";
 
 function App() {
-  const isBookingPage = window.location.pathname.includes("bookings.html");
-
-  if (isBookingPage) {
-    return <BookingForm />;
-  }
-
-  return null; // React stays invisible on homepage
+  return (
+    <Router>
+      <Routes>
+        <Route path="/bookings" element={<BookingForm />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
