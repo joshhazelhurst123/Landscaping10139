@@ -3,18 +3,14 @@ import BookingForm from "./BookingForm";
 import Services from "./Services";
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <h1>Landscaping Booking System</h1>
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get("page");
 
-        <Routes>
-          <Route path="/" element={<BookingForm />} />
-          <Route path="/services" element={<Services />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+  if (page === "booking") {
+    return <BookingForm />;
+  }
+
+  return null; // React app stays invisible on homepage
 }
 
 export default App;
