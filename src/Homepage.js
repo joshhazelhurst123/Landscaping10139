@@ -6,7 +6,7 @@ export default function Homepage() {
     <>
       <nav>
         <a href="/">Home</a>
-        <a href="/services.html">Services</a>
+        <a href="/services">Services</a>
         <a href="/bookings">Bookings</a>
       </nav>
 
