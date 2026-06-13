@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import Homepage from "./Homepage";
-import Services from "./Services";
+import Services from "./Services.js";
 
 function App() {
   return (
