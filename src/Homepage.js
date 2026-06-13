@@ -22,6 +22,9 @@ export default function Homepage() {
           From lawn mowing to hedge trimming and full garden clean‑ups, we take pride
           in keeping your property looking its best.
         </p>
+    <p>
+    Wellington region New Zealand, 0221964920
+    </p>
 
         <a className="cta" href="/bookings">Book a Service</a>
       </div>
