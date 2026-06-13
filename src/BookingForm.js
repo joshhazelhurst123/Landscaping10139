@@ -2,6 +2,22 @@ import React, { useEffect, useState } from "react";
 import { getAvailability, createBooking } from "./api";
 
 export default function BookingForm() {
+return (
+    <>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/bookings">Bookings</a>
+      </nav>
+
+      <header className="services-header">
+        <h1>Our Landscaping Services</h1>
+        <p>Professional, reliable, and tailored to your property</p>
+      </header>
+    </>
+  );
+
+  
   //const [slots, setSlots] = useState([]);
   const [slots, setSlots] = useState({});
 
