@@ -23,9 +23,9 @@ export default function Homepage() {
           in keeping your property looking its best.
         </p>
     <p>
-    Wellington region New Zealand, 0221964920
-    </p>
+    Wellington region New Zealand, 0221964920    
     <br> joshhazelhurst123@gmail.com
+    </p>
 
         <a className="cta" href="/bookings">Book a Service</a>
       </div>
