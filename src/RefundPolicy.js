@@ -1,152 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refund & Cancellation Policy | Landscaping10139 Limited</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f7f7f7;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: #2e7d32;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        nav {
-            background: #1b5e20;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #2e7d32;
-        }
-        h2 {
-            margin-top: 1.8rem;
-        }
-        ul {
-            margin-left: 1.2rem;
-        }
-    </style>
-</head>
-<body>
+import React from "react";
+import "./index.css";
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/services">Services</a>
-    <a href="/bookings">Bookings</a>
-     <a href="/RefundPolicy">RefundPolicy</a>   
-</nav>
+export default function RefundPolicy() {
+  return (
+    <>
+      <nav className="navbar">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/bookings">Bookings</a>
+        <a href="/refundpolicy">Refund Policy</a>
+      </nav>
 
-<header>
-    <h1>Refund & Cancellation Policy</h1>
-    <p>Landscaping10139 Limited</p>
-</header>
+      <header className="refund-header">
+        <h1>Refund & Cancellation Policy</h1>
+        <p>Landscaping10139 Limited</p>
+      </header>
 
-<div class="container">
+      <div className="refund-container">
+        <p>
+          This Refund & Cancellation Policy applies to all services and products provided by 
+          <strong> Landscaping10139 Limited</strong>. By booking or purchasing from us, 
+          you agree to the terms outlined below.
+        </p>
 
-    <p>
-        This Refund & Cancellation Policy applies to all services and products provided by 
-        <strong>Landscaping10139 Limited</strong> (“we”, “our”, “us”). By booking or purchasing from us, 
-        you agree to the terms outlined below.
-    </p>
+        <h2>1. Compliance with the Consumer Guarantees Act 1993</h2>
+        <p>
+          We are committed to meeting all obligations under the 
+          <strong> Consumer Guarantees Act 1993</strong>.
+        </p>
 
-    <h2>1. Compliance with the Consumer Guarantees Act 1993</h2>
-    <p>
-        Landscaping10139 Limited is committed to meeting all obligations under the 
-        <strong>Consumer Guarantees Act 1993</strong>. We aim to provide services and products that meet 
-        acceptable quality standards and are fit for purpose.
-    </p>
+        <h2>2. Refund Period</h2>
+        <p>
+          Our refund policy lasts <strong>30 days</strong> from the date of purchase or service delivery.
+        </p>
 
-    <h2>2. Refund Period</h2>
-    <p>
-        Our refund policy lasts <strong>30 days</strong> from the date of purchase or service delivery. 
-        If more than 30 days have passed, we are unable to offer a refund.
-    </p>
+        <h2>3. Non‑Refundable Services & Products</h2>
+        <ul>
+          <li>Services performed under a binding contract.</li>
+          <li>Products supplied under contractual agreements.</li>
+          <li>Other exclusions as determined case‑by‑case.</li>
+        </ul>
 
-    <h2>3. Non‑Refundable Services & Products</h2>
-    <p>The following are exempt from refunds:</p>
-    <ul>
-        <li>Services performed on properties under a binding contract with Landscaping10139 Limited or its affiliates.</li>
-        <li>Products supplied under contractual agreements, including plant material, ground cover, and durable landscaping products.</li>
-        <li>Other items or services that may be excluded on a case‑by‑case basis.</li>
-    </ul>
+        <h2>4. Partial Refunds</h2>
+        <ul>
+          <li>Up to <strong>50% refund</strong> for dissatisfaction with clear evidence.</li>
+          <li>Refunds for major property damage caused by staff.</li>
+        </ul>
 
-    <h2>4. Partial Refunds</h2>
-    <p>In certain situations, partial refunds may be granted:</p>
-    <ul>
-        <li>
-            If you are not satisfied with our work, we may refund <strong>50% of the booked amount</strong> 
-            as a gesture of goodwill. You must contact us as soon as possible with clear 
-            before‑and‑after photographs.
-        </li>
-        <li>
-            If major damage to your property occurs due to our staff during service delivery. 
-            You must notify us immediately with photographic evidence.
-        </li>
-    </ul>
+        <h2>5. Refund Processing</h2>
+        <p>Refunds are processed within <strong>30 days</strong>.</p>
 
-    <h2>5. Refund Processing</h2>
-    <p>
-        Refund requests will be reviewed and processed within <strong>30 days</strong>. You will be notified 
-        of approval or rejection. Approved refunds will be issued either:
-    </p>
-    <ul>
-        <li>as a credit to the original payment method, or</li>
-        <li>via cash, depending on the circumstances.</li>
-    </ul>
+        <h2>6. Cancellation Policy</h2>
+        <ul>
+          <li>Cancel at least <strong>24 hours</strong> before service.</li>
+          <li>Late cancellations may incur a fee.</li>
+          <li>Weather cancellations are rescheduled free of charge.</li>
+        </ul>
 
-    <h2>6. Cancellation Policy</h2>
-    <ul>
-        <li>Cancellations must be made at least <strong>24 hours</strong> before the scheduled service.</li>
-        <li>Cancellations within 24 hours may incur a call‑out or cancellation fee.</li>
-        <li>Weather‑related cancellations will be rescheduled at no cost.</li>
-    </ul>
+        <h2>7. Credit Card Payment Policy</h2>
+        <p>
+          By paying with a bank card, you agree to your bank’s 
+          <strong> Cardholder Agreement</strong>.
+        </p>
 
-    <h2>7. Credit Card Payment Policy</h2>
-    <p>
-        By making a payment using a bank‑issued credit or debit card, you agree to the terms 
-        outlined in your bank’s <strong>Cardholder Agreement</strong>.
-    </p>
+        <h2>8. Contact Information</h2>
+        <p>
+          Landscaping10139 Limited<br />
+          Phone: <strong>022 196 4920</strong><br />
+          Email: <a href="mailto:joshhazelhurst123@gmail.com">joshhazelhurst123@gmail.com</a><br />
+          Website: <a href="https://landscaping10139.online">landscaping10139.online</a>
+        </p>
 
-    <h2>8. Contact Information</h2>
-    <p>
-        Landscaping10139 Limited<br>
-        Phone: <strong>022 196 4920</strong><br>
-        Email: <a href="mailto:joshhazelhurst123@gmail.com">joshhazelhurst123@gmail.com</a><br>
-        Website: <a href="https://landscaping10139.online">landscaping10139.online</a>
-    </p>
-
-    <h2>9. Policy Updates</h2>
-    <p>
-        Landscaping10139 Limited reserves the right to amend this policy at any time. 
-        Please review this page regularly for updates.
-    </p>
-
-</div>
-
-</body>
-</html>
+        <h2>9. Policy Updates</h2>
+        <p>
+          This policy may be updated at any time. Please check this page regularly.
+        </p>
+      </div>
+    </>
+  );
+}
