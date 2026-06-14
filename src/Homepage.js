@@ -28,7 +28,7 @@ export default function Homepage() {
     </p>
 <p>0221964920,  
  <a href="mailto:joshhazelhurst123@gmail.com?subject=Booking%20Enquiry&body=Hi%20Landscaping10139,">
-  Email Me
+  Email Landscaping10139
 </a>
     </p>
         <a className="cta" href="/bookings">Book a Service</a>
