@@ -58,6 +58,7 @@
     <a href="/">Home</a>
     <a href="/services">Services</a>
     <a href="/bookings">Bookings</a>
+     <a href="/RefundPolicy">RefundPolicy</a>   
 </nav>
 
 <header>
@@ -104,4 +105,48 @@
         </li>
         <li>
             If major damage to your property occurs due to our staff during service delivery. 
-            You must notify us immediately with photographic evidence
+            You must notify us immediately with photographic evidence.
+        </li>
+    </ul>
+
+    <h2>5. Refund Processing</h2>
+    <p>
+        Refund requests will be reviewed and processed within <strong>30 days</strong>. You will be notified 
+        of approval or rejection. Approved refunds will be issued either:
+    </p>
+    <ul>
+        <li>as a credit to the original payment method, or</li>
+        <li>via cash, depending on the circumstances.</li>
+    </ul>
+
+    <h2>6. Cancellation Policy</h2>
+    <ul>
+        <li>Cancellations must be made at least <strong>24 hours</strong> before the scheduled service.</li>
+        <li>Cancellations within 24 hours may incur a call‑out or cancellation fee.</li>
+        <li>Weather‑related cancellations will be rescheduled at no cost.</li>
+    </ul>
+
+    <h2>7. Credit Card Payment Policy</h2>
+    <p>
+        By making a payment using a bank‑issued credit or debit card, you agree to the terms 
+        outlined in your bank’s <strong>Cardholder Agreement</strong>.
+    </p>
+
+    <h2>8. Contact Information</h2>
+    <p>
+        Landscaping10139 Limited<br>
+        Phone: <strong>022 196 4920</strong><br>
+        Email: <a href="mailto:joshhazelhurst123@gmail.com">joshhazelhurst123@gmail.com</a><br>
+        Website: <a href="https://landscaping10139.online">landscaping10139.online</a>
+    </p>
+
+    <h2>9. Policy Updates</h2>
+    <p>
+        Landscaping10139 Limited reserves the right to amend this policy at any time. 
+        Please review this page regularly for updates.
+    </p>
+
+</div>
+
+</body>
+</html>
