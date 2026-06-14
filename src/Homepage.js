@@ -26,7 +26,7 @@ export default function Homepage() {
     Wellington region New Zealand, 
     </p>
 <p>0221964920,  
-     joshhazelhurst123@gmail.com
+    <a href="email:someone@example.com">Send Email</a> 
     </p>
         <a className="cta" href="/bookings">Book a Service</a>
       </div>
