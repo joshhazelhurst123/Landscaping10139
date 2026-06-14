@@ -8,7 +8,7 @@ export default function RefundPolicy() {
         <a href="/">Home</a>
         <a href="/services">Services</a>
         <a href="/bookings">Bookings</a>
-        <a href="/refundpolicy">Refund Policy</a>
+        <a href="/RefundPolicy">Refund Policy</a>
       </nav>
 
       <header className="refund-header">
