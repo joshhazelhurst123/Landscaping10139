@@ -8,6 +8,7 @@ export default function Homepage() {
         <a href="/">Home</a>
         <a href="/services">Services</a>
         <a href="/bookings">Bookings</a>
+    <a href="/RefundPolicy">RefundPolicy</a> 
       </nav>
 
       <header className="hero">
