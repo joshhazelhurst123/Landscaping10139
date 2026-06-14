@@ -9,8 +9,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
-    <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/bookings" element={<BookingForm />} />
+        <Route path="/RefundpPolicy" element={<RefundPolicy />} />
+
       </Routes>
     </Router>
   );
