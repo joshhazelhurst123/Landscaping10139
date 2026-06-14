@@ -19,6 +19,20 @@
             padding: 2rem;
             text-align: center;
         }
+        nav {
+            background: #1b5e20;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
         .container {
             max-width: 900px;
             margin: 2rem auto;
@@ -39,6 +53,12 @@
     </style>
 </head>
 <body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/bookings">Bookings</a>
+</nav>
 
 <header>
     <h1>Refund & Cancellation Policy</h1>
@@ -84,47 +104,4 @@
         </li>
         <li>
             If major damage to your property occurs due to our staff during service delivery. 
-            You must notify us immediately with photographic evidence.
-        </li>
-    </ul>
-
-    <h2>5. Refund Processing</h2>
-    <p>
-        Refund requests will be reviewed and processed within <strong>30 days</strong>. You will be notified 
-        of approval or rejection. Approved refunds will be issued either:
-    </p>
-    <ul>
-        <li>as a credit to the original payment method, or</li>
-        <li>via cash, depending on the circumstances.</li>
-    </ul>
-
-    <h2>6. Cancellation Policy</h2>
-    <ul>
-        <li>Cancellations must be made at least <strong>24 hours</strong> before the scheduled service.</li>
-        <li>Cancellations within 24 hours may incur a call‑out or cancellation fee.</li>
-        <li>Weather‑related cancellations will be rescheduled at no cost.</li>
-    </ul>
-
-    <h2>7. Credit Card Payment Policy</h2>
-    <p>
-        By making a payment using a bank‑issued credit or debit card, you agree to the terms 
-        outlined in your bank’s <strong>Cardholder Agreement</strong>.
-    </p>
-
-    <h2>8. Contact Information</h2>
-    <p>
-        Landscaping10139 Limited<br>
-        Phone: <strong>022 196 4920</strong><br>
-        Website: <a href="https://landscaping10139-limited.b12sites.com/">landscaping10139-limited.b12sites.com</a>
-    </p>
-
-    <h2>9. Policy Updates</h2>
-    <p>
-        Landscaping10139 Limited reserves the right to amend this policy at any time. 
-        Please review this page regularly for updates.
-    </p>
-
-</div>
-
-</body>
-</html>
+            You must notify us immediately with photographic evidence
