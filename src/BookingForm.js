@@ -62,6 +62,7 @@ export default function BookingForm() {
         <a href="/">Home</a>
         <a href="/services">Services</a>
         <a href="/bookings">Bookings</a>
+        <a href="/RefundPolicy">RefundPolicy</a> 
       </nav>
 
       <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
