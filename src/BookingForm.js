@@ -126,6 +126,10 @@ export default function BookingForm() {
             <button type="submit">Submit Booking</button>
           </form>
         </div>
+ <p>0221964920,  
+ <a href="mailto:joshhazelhurst123@gmail.com?subject=Booking%20Enquiry&body=Hi%20Landscaping10139,">
+  Email Landscaping10139
+</a>
       </div>
     </>
   );
