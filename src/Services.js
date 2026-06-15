@@ -194,7 +194,7 @@ export default function Services() {
         </p>
     </section>
 
-    <!-- Service Agreement -->
+    //Service Agreement 
     <section id="service-agreement">
         <h2>Service Agreement</h2>
         <p>
