@@ -108,6 +108,180 @@ export default function Services() {
         </div>
 
       </div>
+<div class="container">
+
+    <nav>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#health-safety">Health &amp; Safety Policy</a>
+        <a href="#service-agreement">Service Agreement</a>
+        <a href="#complaints-resolution">Complaints &amp; Resolution</a>
+    </nav>
+<!--Service Agreement-->
+   <h1>Service Agreement</h1>
+    <!-- Privacy Policy -->
+    <section id="privacy-policy">
+     
+        <h2>Privacy Policy</h2>
+        <p>
+            Landscaping10139 Limited (“we”, “our”, “us”) is committed to protecting your privacy and handling your
+            personal information in accordance with New Zealand privacy laws.
+        </p>
+
+        <h3>Information We Collect</h3>
+        <ul>
+            <li>Contact details such as your name, address, phone number, and email.</li>
+            <li>Property details required to provide landscaping services.</li>
+            <li>Booking, invoicing, and payment information.</li>
+            <li>Any information you provide when you contact us or submit a form.</li>
+        </ul>
+
+        <h3>How We Use Your Information</h3>
+        <ul>
+            <li>To provide and manage our landscaping services.</li>
+            <li>To communicate with you about bookings, changes, or service updates.</li>
+            <li>To issue invoices, process payments, and maintain records.</li>
+            <li>To improve our services and customer experience.</li>
+        </ul>
+
+        <h3>Sharing Your Information</h3>
+        <p>
+            We do not sell your personal information. We may share it with:
+        </p>
+        <ul>
+            <li>Service providers (e.g., accounting or IT support) who assist our operations.</li>
+            <li>Authorities where required by law or to protect our legal rights.</li>
+        </ul>
+
+        <h3>Data Security & Retention</h3>
+        <p>
+            We take reasonable steps to protect your information from loss, misuse, or unauthorised access.
+            Information is retained only as long as necessary for legal, tax, and operational purposes.
+        </p>
+
+        <h3>Your Rights</h3>
+        <p>
+            You may request access to, or correction of, your personal information by contacting us.
+        </p>
+    </section>
+
+    <!-- Health & Safety Policy -->
+    <section id="health-safety">
+        <h2>Health &amp; Safety Policy</h2>
+        <p>
+            Landscaping10139 Limited is committed to providing a safe working environment for our staff, customers,
+            and the public in line with New Zealand health and safety requirements.
+        </p>
+
+        <h3>Our Commitments</h3>
+        <ul>
+            <li>Identify and manage hazards on worksites as far as is reasonably practicable.</li>
+            <li>Use appropriate tools, equipment, and personal protective equipment (PPE).</li>
+            <li>Ensure staff are trained and competent to perform their tasks safely.</li>
+            <li>Pause or postpone work if conditions are unsafe (e.g., severe weather).</li>
+        </ul>
+
+        <h3>Customer Responsibilities</h3>
+        <ul>
+            <li>Inform us of any known hazards on the property (e.g., uneven ground, dogs, exposed wiring).</li>
+            <li>Ensure safe access to the areas where work is to be carried out.</li>
+            <li>Keep children and pets away from active work areas and equipment.</li>
+        </ul>
+
+        <h3>Incident Reporting</h3>
+        <p>
+            Any accidents, near misses, or property damage should be reported to us as soon as possible so that we can
+            investigate and take appropriate action.
+        </p>
+    </section>
+
+    <!-- Service Agreement -->
+    <section id="service-agreement">
+        <h2>Service Agreement</h2>
+        <p>
+            This Service Agreement outlines the general terms under which Landscaping10139 Limited provides services
+            to customers. It should be read together with our Terms &amp; Conditions and Refund &amp; Cancellation Policy.
+        </p>
+
+        <h3>Scope of Services</h3>
+        <p>
+            We provide landscaping and garden maintenance services as described on our website or in your booking
+            confirmation. Any additional work requested may be quoted separately.
+        </p>
+
+        <h3>Bookings & Confirmation</h3>
+        <ul>
+            <li>Bookings may be made via our website, phone, or direct contact.</li>
+            <li>A booking is confirmed once we provide written or electronic confirmation.</li>
+        </ul>
+
+        <h3>Pricing & Payment</h3>
+        <ul>
+            <li>Pricing is based on the information provided at the time of booking.</li>
+            <li>Additional charges may apply if the job is larger or more complex than described.</li>
+            <li>Payment is generally due upon completion unless otherwise agreed.</li>
+        </ul>
+
+        <h3>Customer Obligations</h3>
+        <ul>
+            <li>Provide accurate information about the property and required work.</li>
+            <li>Ensure access to the property at the agreed time.</li>
+            <li>Notify us promptly of any changes or issues that may affect the work.</li>
+        </ul>
+
+        <h3>Our Obligations</h3>
+        <ul>
+            <li>Perform services with reasonable care, skill, and professionalism.</li>
+            <li>Communicate clearly about timing, changes, or delays.</li>
+            <li>Comply with relevant laws and regulations.</li>
+        </ul>
+    </section>
+
+    <!-- Complaints & Resolution Policy -->
+    <section id="complaints-resolution">
+        <h2>Complaints &amp; Resolution Policy</h2>
+        <p>
+            We aim to provide a high standard of service. If you are unhappy with any aspect of our work, we encourage
+            you to let us know so we can address it promptly.
+        </p>
+
+        <h3>How to Make a Complaint</h3>
+        <ul>
+            <li>Contact us by phone, email, or via our website contact form.</li>
+            <li>Provide your name, contact details, property address, and a description of the issue.</li>
+            <li>Where possible, include photos (e.g., before and after) to help us understand the concern.</li>
+        </ul>
+
+        <h3>Our Response Process</h3>
+        <ul>
+            <li>We will acknowledge your complaint as soon as reasonably possible.</li>
+            <li>We may request further information or arrange a site visit if needed.</li>
+            <li>We will aim to provide a proposed resolution within a reasonable timeframe.</li>
+        </ul>
+
+        <h3>Possible Outcomes</h3>
+        <ul>
+            <li>Rectification of the work where appropriate.</li>
+            <li>A partial refund or credit, in line with our Refund Policy.</li>
+            <li>Explanation where we believe the service was delivered as agreed.</li>
+        </ul>
+
+        <h3>Escalation</h3>
+        <p>
+            If you are not satisfied with the outcome, you may request that your complaint be reviewed by a manager or
+            owner of Landscaping10139 Limited. We will make reasonable efforts to reach a fair and practical resolution.
+        </p>
+    </section>
+
+    <section>
+        <h3>Contact Details</h3>
+        <p>
+            Landscaping10139 Limited<br>
+            Phone: 022 196 4920<br>
+            Website: <a href="https://landscaping10139-limited.b12sites.com/">landscaping10139-limited.b12sites.com</a>
+        </p>
+    </section>
+
+              
     </>
   );
 }
