@@ -117,7 +117,7 @@ export default function Services() {
           <a href="#service-agreement">Service Agreement</a>
           <a href="#complaints-resolution">Complaints & Resolution</a>
         </nav>
-
+import "./Services.css";
         {/* Privacy Policy */}
         <section id="privacy-policy">
           <h2>Privacy Policy</h2>
