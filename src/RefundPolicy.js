@@ -76,7 +76,7 @@ export default function RefundPolicy() {
         <p>
           This policy may be updated at any time. Please check this page regularly.
         </p>
- <p>0221964920,  
+ <p>0221964920, </p> 
  <a href="mailto:joshhazelhurst123@gmail.com?subject=Booking%20Enquiry&body=Hi%20Landscaping10139,">
   Email Landscaping10139
 </a>
