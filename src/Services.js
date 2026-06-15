@@ -118,7 +118,7 @@ export default function Services() {
     </nav>
 //Service Agreement
    <h1>Service Agreement</h1>
-    <!-- Privacy Policy -->
+  //Privacy Policy 
     <section id="privacy-policy">
      
         <h2>Privacy Policy</h2>
@@ -164,7 +164,7 @@ export default function Services() {
         </p>
     </section>
 
-    <!-- Health & Safety Policy -->
+    // Health & Safety Policy 
     <section id="health-safety">
         <h2>Health &amp; Safety Policy</h2>
         <p>
@@ -236,7 +236,7 @@ export default function Services() {
         </ul>
     </section>
 
-    <!-- Complaints & Resolution Policy -->
+   //Complaints & Resolution Policy 
     <section id="complaints-resolution">
         <h2>Complaints &amp; Resolution Policy</h2>
         <p>
