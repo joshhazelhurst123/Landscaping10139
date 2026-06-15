@@ -207,9 +207,14 @@ export default function Services() {
     <section>
         <h3>Contact Details</h3>
         <p>
-            Landscaping10139 Limited<br>
-            Phone: 022 196 4920<br>
-            Website: <a href="https://landscaping10139-limited.b12sites.com/">landscaping10139-limited.b12sites.com</a>
+            Landscaping10139 Limited, 
+            Phone: 022 196 4920
+</p><p>
+ <a href="mailto:joshhazelhurst123@gmail.com?subject=Booking%20Enquiry&body=Hi%20Landscaping10139,">
+  Email Landscaping10139
+</a>
+
+
         </p>
     </section>
 
