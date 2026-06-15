@@ -48,7 +48,7 @@ export default function Services() {
         <a href="#service-agreement">Service Agreement</a>
         <a href="#complaints-resolution">Complaints &amp; Resolution</a>
     </nav>
-<!--Service Agreement-->
+//Service Agreement
    <h1>Service Agreement</h1>
     <!-- Privacy Policy -->
     <section id="privacy-policy">
@@ -96,7 +96,7 @@ export default function Services() {
         </p>
     </section>
 
-    <!-- Health & Safety Policy -->
+  //Health & Safety Policy 
     <section id="health-safety">
         <h2>Health &amp; Safety Policy</h2>
         <p>
@@ -126,7 +126,7 @@ export default function Services() {
         </p>
     </section>
 
-    <!-- Service Agreement -->
+   //Service Agreement 
     <section id="service-agreement">
         <h2>Service Agreement</h2>
         <p>
@@ -168,7 +168,7 @@ export default function Services() {
         </ul>
     </section>
 
-    <!-- Complaints & Resolution Policy -->
+   // Complaints & Resolution Policy
     <section id="complaints-resolution">
         <h2>Complaints &amp; Resolution Policy</h2>
         <p>
