@@ -3,6 +3,7 @@ import BookingForm from "./BookingForm";
 import Homepage from "./Homepage";
 import Services from "./Services.js";
 import RefundPolicy from "./RefundPolicy";
+import Terms from "./Terms";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/REFUNDPOLICY" element={<RefundPolicy />} />
         {/* Optional: redirect dashed version */}
         <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/terms" element={<Terms />} />
       </Routes>
     </Router>
   );
