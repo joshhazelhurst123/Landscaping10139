@@ -86,7 +86,7 @@ export default function Terms() {
           By booking a service, you acknowledge that you have read and agree to these Terms & Conditions.
         </p>
 
-             <p>0221964920,</p>  
+             <p>0221964920</p>  
  <a href="mailto:joshhazelhurst123@gmail.com?subject=Booking%20Enquiry&body=Hi%20Landscaping10139,">
   Email Landscaping10139
 </a>
