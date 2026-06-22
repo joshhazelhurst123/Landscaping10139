@@ -61,8 +61,8 @@ async function handleSubmit(e) {
     // 3. Notify user
     alert(
       result.bookingId
-        ? `Booking created! ID: ${result.bookingId}. A confirmation email has been sent.`
-        : "Booking created (no ID returned). A confirmation email has been sent."
+        ? `Booking created! ID: ${result.bookingId}. A confirmation email has been sent. Check your spam folder.`
+        : "Booking created (no ID returned). A confirmation email has been sent. Check your spam folder."
     );
 
   } catch (err) {
