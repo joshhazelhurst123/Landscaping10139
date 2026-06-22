@@ -47,7 +47,7 @@ async function handleSubmit(e) {
     }
 
     // 2. Send confirmation email via your SES Lambda
-    await fetch("YOUR_API_GATEWAY_URL/sendBookingEmail", {
+    await fetch("https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com/prod/sendBookingEmail", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
