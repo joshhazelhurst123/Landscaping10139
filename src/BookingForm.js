@@ -34,27 +34,42 @@ export default function BookingForm() {
     setForm((prev) => ({ ...prev, preferredDate: iso }));
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+async function handleSubmit(e) {
+  e.preventDefault();
 
-    try {
-      const result = await createBooking(form);
+  try {
+    // 1. Create booking in your backend
+    const result = await createBooking(form);
 
-      if (result.error === "Time slot already booked") {
-        alert("Sorry — that time has just been booked. Please choose another slot.");
-        return;
-      }
-
-      alert(
-        result.bookingId
-          ? `Booking created! ID: ${result.bookingId}`
-          : "Booking created (no ID returned)"
-      );
-    } catch (err) {
-      console.error("🔥 BOOKING ERROR:", err);
-      alert("Booking failed — see console");
+    if (result.error === "Time slot already booked") {
+      alert("Sorry — that time has just been booked. Please choose another slot.");
+      return;
     }
+
+    // 2. Send confirmation email via your SES Lambda
+    await fetch("YOUR_API_GATEWAY_URL/sendBookingEmail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.customerName,
+        email: form.customerEmail,
+        service: form.serviceType,
+        date: form.preferredDate,
+      }),
+    });
+
+    // 3. Notify user
+    alert(
+      result.bookingId
+        ? `Booking created! ID: ${result.bookingId}. A confirmation email has been sent.`
+        : "Booking created (no ID returned). A confirmation email has been sent."
+    );
+
+  } catch (err) {
+    console.error("🔥 BOOKING ERROR:", err);
+    alert("Booking failed — see console");
   }
+}
 
   return (
     <>
