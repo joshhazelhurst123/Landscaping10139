@@ -46,18 +46,6 @@ export default function BookingForm() {
         return;
       }
 
-      await fetch("https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com/prod/sendBookingEmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.customerName,
-          email: form.customerEmail,
-          customerPhone: form.customerPhone,
-          service: form.serviceType,
-          date: form.preferredDate,
-        }),
-      });
-
       alert(
         result.bookingId
           ? `Booking created! ID: ${result.bookingId}. A confirmation email has been sent. Check your spam folder.`
