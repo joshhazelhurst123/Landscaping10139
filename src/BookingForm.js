@@ -8,7 +8,7 @@ export default function BookingForm() {
   const [form, setForm] = useState({
     customerName: "",
     customerEmail: "",
-    customerPhone: "", 
+    customerPhone: "",
     serviceType: "LAWN_MOWING",
     preferredDate: ""
   });
@@ -35,43 +35,40 @@ export default function BookingForm() {
     setForm((prev) => ({ ...prev, preferredDate: iso }));
   }
 
-async function handleSubmit(e) {
-  e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-  try {
-    // 1. Create booking in your backend
-    const result = await createBooking(form);
+    try {
+      const result = await createBooking(form);
 
-    if (result.error === "Time slot already booked") {
-      alert("Sorry — that time has just been booked. Please choose another slot.");
-      return;
+      if (result.error === "Time slot already booked") {
+        alert("Sorry — that time has just been booked. Please choose another slot.");
+        return;
+      }
+
+      await fetch("https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com/prod/sendBookingEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.customerName,
+          email: form.customerEmail,
+          customerPhone: form.customerPhone,
+          service: form.serviceType,
+          date: form.preferredDate,
+        }),
+      });
+
+      alert(
+        result.bookingId
+          ? `Booking created! ID: ${result.bookingId}. A confirmation email has been sent. Check your spam folder.`
+          : "Booking created (no ID returned). A confirmation email has been sent. Check your spam folder."
+      );
+
+    } catch (err) {
+      console.error("🔥 BOOKING ERROR:", err);
+      alert("Booking failed — see console");
     }
-
-    // 2. Send confirmation email via your SES Lambda
-    await fetch("https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com/prod/sendBookingEmail", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: form.customerName,
-        email: form.customerEmail,
-        customerPhone: form.customerPhone,
-        service: form.serviceType,
-        date: form.preferredDate,
-      }),
-    });
-
-    // 3. Notify user
-    alert(
-      result.bookingId
-        ? `Booking created! ID: ${result.bookingId}. A confirmation email has been sent. Check your spam folder.`
-        : "Booking created (no ID returned). A confirmation email has been sent. Check your spam folder."
-    );
-
-  } catch (err) {
-    console.error("🔥 BOOKING ERROR:", err);
-    alert("Booking failed — see console");
   }
-}
 
   return (
     <>
@@ -79,8 +76,8 @@ async function handleSubmit(e) {
         <a href="/">Home</a>
         <a href="/services">Services</a>
         <a href="/bookings">Bookings</a>
-        <a href="/RefundPolicy">Refund Policy</a> 
-       <a href="/Terms">Terms & Conditions</a> 
+        <a href="/RefundPolicy">Refund Policy</a>
+        <a href="/Terms">Terms & Conditions</a>
       </nav>
 
       <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
@@ -103,14 +100,17 @@ async function handleSubmit(e) {
               onChange={handleChange}
               required
             />
+
+            <label>Mobile Phone</label>
             <input
               type="tel"
               name="customerPhone"
               placeholder="Mobile Phone Number"
-              value={formData.customerPhone}
+              value={form.customerPhone}
               onChange={handleChange}
               required
-/>
+            />
+
             <label>Service Type</label>
             <select
               name="serviceType"
@@ -150,10 +150,13 @@ async function handleSubmit(e) {
             <button type="submit">Submit Booking</button>
           </form>
         </div>
- <p>0221964920 <br /> 
- <a href="mailto:joshhazelhurst123@gmail.com?subject=Booking%20Enquiry&body=Hi%20Landscaping10139,">
-  Email Landscaping10139
-</a></p>
+
+        <p>
+          0221964920 <br />
+          <a href="mailto:joshhazelhurst123@gmail.com?subject=Booking%20Enquiry&body=Hi%20Landscaping10139,">
+            Email Landscaping10139
+          </a>
+        </p>
       </div>
     </>
   );
