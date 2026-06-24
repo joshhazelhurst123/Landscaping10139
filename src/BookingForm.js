@@ -104,7 +104,7 @@ async function handleSubmit(e) {
               required
             />
                  <label>Phone Number</label>
-             <input type="tel"
+             <input 
                 name="customerPhone"
                 value={formData.customerPhone}
                 onChange={handleChange}
