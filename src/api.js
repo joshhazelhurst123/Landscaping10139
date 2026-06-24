@@ -50,6 +50,7 @@ export async function createBooking(form) {
     body: JSON.stringify({
       customerName: form.customerName,
       customerEmail: form.customerEmail,
+      customerPhone: formData.customerPhone,
       serviceType: form.serviceType,
       preferredDate: form.preferredDate
     })
