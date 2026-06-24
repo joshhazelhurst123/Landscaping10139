@@ -103,14 +103,14 @@ async function handleSubmit(e) {
               onChange={handleChange}
               required
             />
-                 <label>Phone Number</label>
-             <input 
-                name="customerPhone"
-                value={formData.customerPhone}
-                onChange={handleChange}
-                required
+            <input
+              type="tel"
+              name="customerPhone"
+              placeholder="Mobile Phone Number"
+              value={formData.customerPhone}
+              onChange={handleChange}
+              required
 />
-
             <label>Service Type</label>
             <select
               name="serviceType"
