@@ -8,6 +8,7 @@ export default function BookingForm() {
   const [form, setForm] = useState({
     customerName: "",
     customerEmail: "",
+    customerPhone: "", 
     serviceType: "LAWN_MOWING",
     preferredDate: ""
   });
@@ -53,6 +54,7 @@ async function handleSubmit(e) {
       body: JSON.stringify({
         name: form.customerName,
         email: form.customerEmail,
+        customerPhone: form.customerPhone,
         service: form.serviceType,
         date: form.preferredDate,
       }),
@@ -101,6 +103,13 @@ async function handleSubmit(e) {
               onChange={handleChange}
               required
             />
+                 <label>Phone Number</label>
+             <input type="tel"
+                name="customerPhone"
+                value={formData.customerPhone}
+                onChange={handleChange}
+                required
+/>
 
             <label>Service Type</label>
             <select
