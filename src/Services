@@ -42,7 +42,7 @@ export default function Services() {
       </div>
 <div class="container">
 
-    <nav>
+    <nav class="policy-nav">
         <a href="#privacy-policy">Privacy Policy</a>
         <a href="#health-safety">Health &amp; Safety Policy</a>
         <a href="#service-agreement">Service Agreement</a>
