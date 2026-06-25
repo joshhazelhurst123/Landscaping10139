@@ -15,6 +15,49 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Base navigation styling (Desktop view) */
+.policy-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    background-color: #f8f9fa; /* Optional: adds a subtle background */
+    border-radius: 5px;
+}
+
+.policy-nav a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.policy-nav a:hover {
+    background-color: #e2e6ea;
+    border-radius: 4px;
+}
+
+/* Mobile Devices (Screens smaller than 768px) */
+@media (max-width: 768px) {
+    .policy-nav {
+        flex-direction: column; /* Stacks the links vertically */
+        align-items: stretch;   /* Makes buttons stretch to full width */
+        gap: 8px;               /* Tightens the gap between stacked items */
+        padding: 15px;
+    }
+
+    .policy-nav a {
+        text-align: center;
+        background-color: #ffffff; /* Gives links a clean 'button' look on mobile */
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 14px; /* Larger touch target for thumbs (minimum 44x44px recommended) */
+    }
+}
+
 .services-header {
   background: #2e7d32;
   color: white;
