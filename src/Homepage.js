@@ -21,7 +21,7 @@ export default function Homepage() {
         <h2>Welcome to Landscaping 10139</h2>
         <p>
           We provide reliable, affordable landscaping services across your local area.
-          From lawn mowing to hedge trimming and full garden clean‑ups, we take pride
+          From lawn mowing to hedge trimming and full garden clean‑ups, we take care
           in keeping your property looking its best.
         </p>
     <p>
