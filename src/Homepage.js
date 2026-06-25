@@ -53,7 +53,7 @@ export default function Homepage() {
       Our Location
     </h2>
     <p style={{ marginBottom: "20px", fontSize: "1.1rem" }}>
-      Proudly serving the Paremata & Porirua region
+       Serving the Porirua & Wellington region
     </p>
 
     <div
