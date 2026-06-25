@@ -36,16 +36,17 @@ export default function Homepage() {
       </div>
 <div style={{ width: "100%", height: "400px" }}>
   <iframe
-    title="Paremata Railway Station Map"
+    title="Paremata Station Map"
     width="100%"
     height="100%"
     style={{ border: 0 }}
     loading="lazy"
     allowFullScreen
-    referrerPolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10174.06867638152!2d174.839!3d-41.093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d38acb7c8f4b0c5%3A0x500ef6143a2f0b0!2sParemata%20Railway%20Station!5e0!3m2!1sen!2snz!4v1719450000000"
+    referrerPolicy="strict-origin-when-cross-origin"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12023.946459200823!2d174.8683749142944!3d-41.11298339643922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d3f540d51dca261%3A0x1d00ef62249b9560!2sParemata%20Station!5e0!3m2!1sen!2snz!4v1782364778377!5m2!1sen!2snz"
   ></iframe>
 </div>
+
 
 
     
