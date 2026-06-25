@@ -105,6 +105,7 @@ nav a:hover {
 
 .services-subnav {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 1rem;
   background: #1b5e20;
@@ -117,9 +118,28 @@ nav a:hover {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.2s ease;
 }
 
 .services-subnav a:hover {
   text-decoration: underline;
 }
 
+/* Mobile Devices (Screens smaller than 768px) */
+@media (max-width: 768px) {
+    .services-subnav {
+        flex-direction: column; /* Stacks the links vertically */
+        align-items: stretch;   /* Makes buttons stretch to full width */
+        gap: 10px;              /* Space between stacked items */
+        padding: 1rem;
+    }
+
+    .services-subnav a {
+        text-align: center;
+        background-color: #2e7d32; /* Slightly lighter green for distinct mobile buttons */
+        border: 1px solid #1b5e20;
+        border-radius: 6px;
+        padding: 14px; /* Larger touch target for mobile fingers */
+    }
+}
