@@ -60,7 +60,7 @@ async function handleSubmit(e) {
       customerPhone: form.customerPhone,
       service: form.serviceType,
       date: form.preferredDate,
-      priceId: "price_123" // replace with your real price ID
+      priceId: "price_1Tllb74HblslV256wGy2O8Nu" // replace with your real price ID
     });
 
     // 3️⃣ Redirect to Stripe Checkout
