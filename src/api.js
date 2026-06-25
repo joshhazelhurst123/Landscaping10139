@@ -33,6 +33,13 @@ async function callApi(url, options = {}) {
 
 // ---------- Public API functions ----------
 
+export async function createPaymentLink(payload) {
+  return await callApi(`${BASE_URL}/createPaymentLink`, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+}
+
 // Flatten grouped availability into a simple array of ISO strings
 export async function getAvailability() {
   const data = await callApi(ENDPOINTS.availability);
