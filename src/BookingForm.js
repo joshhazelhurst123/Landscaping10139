@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAvailability, createBooking } from "./api";
+import { getAvailability, createBooking, createPaymentLink } from "./api";
 
 export default function BookingForm() {
   const [slots, setSlots] = useState({});
@@ -35,46 +35,43 @@ export default function BookingForm() {
     setForm((prev) => ({ ...prev, preferredDate: iso }));
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+async function handleSubmit(e) {
+  e.preventDefault();
 
-const result = await createBooking(form);
+  try {
+    // 1️⃣ Create the booking
+    const result = await createBooking(form);
 
-if (result.bookingId) {
-  const payment = await createPaymentLink({
-    bookingId: result.bookingId,
-    customerName: form.customerName,
-    customerEmail: form.customerEmail,
-    customerPhone: form.customerPhone,
-    service: form.serviceType,
-    date: form.preferredDate,
-    priceId: "price_123" // your real price ID
-  });
-
-  window.location.href = payment.url; // redirect to Stripe
-}
-
-    
-    try {
-      const result = await createBooking(form);
-
-      if (result.error === "Time slot already booked") {
-        alert("Sorry — that time has just been booked. Please choose another slot.");
-        return;
-      }
-
-      alert(
-        result.bookingId
-          ? `Booking created! ID: ${result.bookingId}. A confirmation email has been sent. Check your spam folder.`
-          : "Booking created (no ID returned). A confirmation email has been sent. Check your spam folder."
-      );
-
-    } catch (err) {
-      console.error("🔥 BOOKING ERROR:", err);
-      alert("Booking failed — see console");
+    if (result.error === "Time slot already booked") {
+      alert("Sorry — that time has just been booked. Please choose another slot.");
+      return;
     }
-  }
 
+    if (!result.bookingId) {
+      alert("Booking failed — no bookingId returned.");
+      return;
+    }
+
+    // 2️⃣ Create the payment link with metadata
+    const payment = await createPaymentLink({
+      bookingId: result.bookingId,
+      customerName: form.customerName,
+      customerEmail: form.customerEmail,
+      customerPhone: form.customerPhone,
+      service: form.serviceType,
+      date: form.preferredDate,
+      priceId: "price_123" // replace with your real price ID
+    });
+
+    // 3️⃣ Redirect to Stripe Checkout
+    window.location.href = payment.url;
+
+  } catch (err) {
+    console.error("🔥 BOOKING ERROR:", err);
+    alert("Booking failed — see console");
+  }
+}
+  
   return (
     <>
       <nav>
