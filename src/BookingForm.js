@@ -38,6 +38,23 @@ export default function BookingForm() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+const result = await createBooking(form);
+
+if (result.bookingId) {
+  const payment = await createPaymentLink({
+    bookingId: result.bookingId,
+    customerName: form.customerName,
+    customerEmail: form.customerEmail,
+    customerPhone: form.customerPhone,
+    service: form.serviceType,
+    date: form.preferredDate,
+    priceId: "price_123" // your real price ID
+  });
+
+  window.location.href = payment.url; // redirect to Stripe
+}
+
+    
     try {
       const result = await createBooking(form);
 
