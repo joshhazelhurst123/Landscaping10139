@@ -34,22 +34,52 @@ export default function Homepage() {
     </p>
         <a className="cta" href="/bookings">Book a Service</a>
       </div>
-<div style={{ width: "100%", height: "400px" }}>
-  <iframe
-    title="Paremata Station Map"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    loading="lazy"
-    allowFullScreen
-    referrerPolicy="strict-origin-when-cross-origin"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12023.946459200823!2d174.8683749142944!3d-41.11298339643922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d3f540d51dca261%3A0x1d00ef62249b9560!2sParemata%20Station!5e0!3m2!1sen!2snz!4v1782364778377!5m2!1sen!2snz"
-  ></iframe>
-</div>
+<section
+  style={{
+    padding: "40px 20px",
+    background: "#f5f5f5",
+    borderTop: "4px solid #2e7d32",
+    borderBottom: "4px solid #2e7d32",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "900px",
+      margin: "0 auto",
+      textAlign: "center",
+    }}
+  >
+    <h2 style={{ color: "#2e7d32", marginBottom: "10px" }}>
+      Our Location
+    </h2>
+    <p style={{ marginBottom: "20px", fontSize: "1.1rem" }}>
+      Proudly serving the Paremata & Porirua region
+    </p>
 
+    <div
+      style={{
+        width: "100%",
+        height: "400px",
+        borderRadius: "10px",
+        overflow: "hidden",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+      }}
+    >
+      <iframe
+        title="Paremata Station Map"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="strict-origin-when-cross-origin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12023.946459200823!2d174.8683749142944!3d-41.11298339643922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d3f540d51dca261%3A0x1d00ef62249b9560!2sParemata%20Station!5e0!3m2!1sen!2snz!4v1782364778377!5m2!1sen!2snz"
+      ></iframe>
+    </div>
+  </div>
+</section>
 
-
-    
+   
     </>
   );
 }
