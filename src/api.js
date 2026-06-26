@@ -1,7 +1,7 @@
 // api.js — single source of truth for all API calls
 
 const BASE_URL =
-  "https://j10rrg72aa.execute-api.us-east-1.amazonaws.com/default";
+  "https://j10rrg72aa.execute-api.us-east-1.amazonaws.com/prod";
 
 const ENDPOINTS = {
   availability: `${BASE_URL}/bookingAvailability`,
