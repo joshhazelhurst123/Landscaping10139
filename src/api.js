@@ -6,7 +6,6 @@ const BASE_URL = "const BASE_URL = "https://tl3mum5nqj.execute-api.us-east-1.ama
 const ENDPOINTS = {
   availability: `${BASE_URL}/bookingAvailability`,
   booking: `${BASE_URL}/createBooking`,
-  cancelBooking: `${BASE_URL}/cancelBooking`,
 };
 
 // ---------- Core fetch helper ----------
