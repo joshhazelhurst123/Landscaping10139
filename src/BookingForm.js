@@ -16,8 +16,8 @@ export default function BookingForm() {
   useEffect(() => {
     async function load() {
       try {
-        const grouped = await getAvailability();
-        setSlots(grouped);
+      const grouped = await getAvailability();
+      setSlots(grouped.available);
       } catch (err) {
         console.error("🔥 Availability load error:", err);
       }
