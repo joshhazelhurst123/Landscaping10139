@@ -1,30 +1,26 @@
 // api.js — single source of truth for all API calls
 
-const BASE_URL =
-  "https://76ohylao68.execute-api.us-east-1.amazonaws.com";
+const BASE_URL = "https://76ohylao68.execute-api.us-east-1.amazonaws.com";
 
 const ENDPOINTS = {
   availability: `${BASE_URL}/bookingAvailability`,
   booking: `${BASE_URL}/createBooking`,
-cancelBooking: `${BASE_URL}/cancelBooking'
+  cancelBooking: `${BASE_URL}/cancelBooking`,
 };
 
 // ---------- Core fetch helper ----------
 
 async function callApi(url, options = {}) {
   const res = await fetch(url, {
-    method: "GET",
     headers: { "Content-Type": "application/json" },
-    ...options
+    ...options // <-- method now comes from options
   });
 
   const text = await res.text();
   console.log(`[API] ${url} →`, text);
 
-  // Parse the outer API Gateway wrapper
   let parsed = JSON.parse(text);
 
-  // If API Gateway wrapped the real payload inside "body", unwrap it
   if (parsed && typeof parsed.body === "string") {
     parsed = JSON.parse(parsed.body);
   }
@@ -41,19 +37,16 @@ export async function createPaymentLink(payload) {
   });
 }
 
-// Flatten grouped availability into a simple array of ISO strings
 export async function getAvailability() {
-  const data = await callApi(ENDPOINTS.availability);
+  const data = await callApi(ENDPOINTS.availability, {
+    method: "GET"
+  });
 
-  // data.available = { "Tue, 19 May": [iso1, iso2], ... }
-/** changed from flat array to a grouped object
-  */
-return data.available; // return grouped, not flattened
-  
+  return data.available;
 }
 
 export async function createBooking(form) {
-  const data = await callApi(ENDPOINTS.booking, {
+  return await callApi(ENDPOINTS.booking, {
     method: "POST",
     body: JSON.stringify({
       customerName: form.customerName,
@@ -63,6 +56,4 @@ export async function createBooking(form) {
       preferredDate: form.preferredDate
     })
   });
-
-  return data;
 }
