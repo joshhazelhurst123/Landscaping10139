@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAvailability, createBooking, createPaymentLink } from "./api";
+import { getAvailability, createBooking } from "./api";
 
 export default function BookingForm() {
   const [slots, setSlots] = useState({});
@@ -35,43 +35,31 @@ export default function BookingForm() {
     setForm((prev) => ({ ...prev, preferredDate: iso }));
   }
 
-async function handleSubmit(e) {
-  e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-  try {
-    // 1️⃣ Create the booking
-    const result = await createBooking(form);
+    try {
+      const result = await createBooking(form);
 
-    if (result.error === "Time slot already booked") {
-      alert("Sorry — that time has just been booked. Please choose another slot.");
-      return;
+      if (result.error === "Time slot already booked") {
+        alert("Sorry — that time has just been booked. Please choose another slot.");
+        return;
+      }
+
+      if (!result.bookingId) {
+        alert("Booking failed — no bookingId returned.");
+        return;
+      }
+
+      // ✔ New PayPal flow: backend sends email with payment link
+      alert("Booking created! Please check your email to complete payment.");
+
+    } catch (err) {
+      console.error("🔥 BOOKING ERROR:", err);
+      alert("Booking failed — see console");
     }
-
-    if (!result.bookingId) {
-      alert("Booking failed — no bookingId returned.");
-      return;
-    }
-
-    // 2️⃣ Create the payment link with metadata
-    const payment = await createPaymentLink({
-      bookingId: result.bookingId,
-      customerName: form.customerName,
-      customerEmail: form.customerEmail,
-      customerPhone: form.customerPhone,
-      service: form.serviceType,
-      date: form.preferredDate,
-      priceId: "price_1Tllb74HblslV256wGy2O8Nu" // replace with your real price ID
-    });
-
-    // 3️⃣ Redirect to Stripe Checkout
-    window.location.href = payment.url;
-
-  } catch (err) {
-    console.error("🔥 BOOKING ERROR:", err);
-    alert("Booking failed — see console");
   }
-}
-  
+
   return (
     <>
       <nav>
