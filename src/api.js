@@ -1,11 +1,11 @@
 // api.js — single source of truth for all API calls
 
-const BASE_URL = "const BASE_URL = "https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com";
-";
+const BASE_URL = "https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com";
+const PAYPAL_URL = "https://76ohylao68.execute-api.us-east-1.amazonaws.com";
 
 const ENDPOINTS = {
   availability: `${BASE_URL}/bookingAvailability`,
-  booking: `${BASE_URL}/createBooking`,
+  booking: `${BASE_URL}/createBooking`
 };
 
 // ---------- Core fetch helper ----------
@@ -13,7 +13,7 @@ const ENDPOINTS = {
 async function callApi(url, options = {}) {
   const res = await fetch(url, {
     headers: { "Content-Type": "application/json" },
-    ...options // <-- method now comes from options
+    ...options
   });
 
   const text = await res.text();
@@ -30,19 +30,10 @@ async function callApi(url, options = {}) {
 
 // ---------- Public API functions ----------
 
-export async function createPaymentLink(payload) {
-  return await callApi(`${BASE_URL}/createPaymentLink`, {
-    method: "POST",
-    body: JSON.stringify(payload)
-  });
-}
-
 export async function getAvailability() {
-  const data = await callApi(ENDPOINTS.availability, {
+  return await callApi(ENDPOINTS.availability, {
     method: "GET"
   });
-
-  return data.available;
 }
 
 export async function createBooking(form) {
@@ -55,5 +46,13 @@ export async function createBooking(form) {
       serviceType: form.serviceType,
       preferredDate: form.preferredDate
     })
+  });
+}
+
+// PayPal (optional if you call createOrder from backend only)
+export async function createOrder(bookingId) {
+  return await callApi(`${PAYPAL_URL}/createOrder`, {
+    method: "POST",
+    body: JSON.stringify({ bookingId })
   });
 }
