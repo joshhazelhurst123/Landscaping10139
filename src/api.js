@@ -1,7 +1,7 @@
 // api.js — single source of truth for all API calls
 
 const BASE_URL =
-  "https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com/clean/stripeWebhook";
+  "https://76ohylao68.execute-api.us-east-1.amazonaws.com";
 
 const ENDPOINTS = {
   availability: `${BASE_URL}/bookingAvailability`,
