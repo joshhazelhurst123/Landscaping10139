@@ -1,6 +1,6 @@
 // api.js — single source of truth for all API calls
 
-const BASE_URL = "const BASE_URL = "https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com/clean";
+const BASE_URL = "https://tl3mum5nqj.execute-api.us-east-1.amazonaws.com/clean";
 const PAYPAL_URL = "https://76ohylao68.execute-api.us-east-1.amazonaws.com";
 
 const ENDPOINTS = {
@@ -49,7 +49,7 @@ export async function createBooking(form) {
   });
 }
 
-// PayPal (optional if you call createOrder from backend only)
+// PayPal (backend sends email with approval link)
 export async function createOrder(bookingId) {
   return await callApi(`${PAYPAL_URL}/createOrder`, {
     method: "POST",
