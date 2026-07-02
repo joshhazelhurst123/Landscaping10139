@@ -5,7 +5,8 @@ const BASE_URL =
 
 const ENDPOINTS = {
   availability: `${BASE_URL}/bookingAvailability`,
-  booking: `${BASE_URL}/createBooking`
+  booking: `${BASE_URL}/createBooking`,
+cancelBooking: `${BASE_URL}/cancelBooking'
 };
 
 // ---------- Core fetch helper ----------
