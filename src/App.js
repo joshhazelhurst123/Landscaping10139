@@ -4,6 +4,8 @@ import Homepage from "./Homepage";
 import Services from "./Services.js";
 import RefundPolicy from "./RefundPolicy";
 import Terms from "./Terms";
+import PaymentSuccess from "./PaymentSuccess";
+
 
 function App() {
   return (
