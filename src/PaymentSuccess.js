@@ -2,19 +2,34 @@ import { useEffect } from "react";
 
 export default function PaymentSuccess() {
   useEffect(() => {
+    console.log("PaymentSuccess mounted");
+
     const params = new URLSearchParams(window.location.search);
     const orderID = params.get("token");
     const bookingId = localStorage.getItem("bookingId");
 
-    if (!orderID || !bookingId) return;
+    console.log("orderID =", orderID);
+    console.log("bookingId =", bookingId);
+
+    if (!orderID || !bookingId) {
+      console.warn("STOP: Missing orderID or bookingId — fetch will NOT run");
+      return;
+    }
+
+    console.log("Running fetch to captureOrder…");
 
     fetch("https://gc3h85wvc7.execute-api.us-east-1.amazonaws.com/prod/captureOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ orderID, bookingId })
-    }).finally(() => {
-      localStorage.removeItem("bookingId");
-    });
+    })
+      .then(r => r.text())
+      .then(t => console.log("captureOrder response:", t))
+      .catch(e => console.error("captureOrder error:", e))
+      .finally(() => {
+        console.log("Removing bookingId from localStorage");
+        localStorage.removeItem("bookingId");
+      });
   }, []);
 
   return (
