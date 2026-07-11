@@ -20,7 +20,7 @@ function App() {
         <Route path="/RefundPolicy" element={<RefundPolicy />} />
         <Route path="/Refundpolicy" element={<RefundPolicy />} />
         <Route path="/REFUNDPOLICY" element={<RefundPolicy />} />
-        <Route path="/payment-success" element={<PaymentSuccess />} />
+        <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
 
         {/* Optional: redirect dashed version */}
         <Route path="/refund-policy" element={<RefundPolicy />} />
