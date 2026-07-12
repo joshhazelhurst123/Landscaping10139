@@ -33,15 +33,26 @@ export default function PaymentSuccess() {
   }, []);
 
   return (
-    <div style={{ padding: "40px", textAlign: "center" }}>
-      <h1>Payment Successful</h1>
-      <p>Your booking is now confirmed.</p>
-      <p>A receipt has been emailed to you by PayPal.</p>
-    </div>
-<p style={{ marginTop: "30px" }}>
-  <a href="/" style={{ fontSize: "18px" }}>
-    ← Back to Home
-  </a>
-</p>
+    <>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/bookings">Bookings</a>
+        <a href="/RefundPolicy">Refund Policy</a>
+        <a href="/Terms">Terms & Conditions</a>
+      </nav>
+
+      <div style={{ padding: "40px", textAlign: "center" }}>
+        <h1>Payment Successful</h1>
+        <p>Your booking is now confirmed.</p>
+        <p>A receipt has been emailed to you by PayPal.</p>
+
+        <p style={{ marginTop: "30px" }}>
+          <a href="/" style={{ fontSize: "18px" }}>
+            ← Back to Home
+          </a>
+        </p>
+      </div>
+    </>
   );
 }
