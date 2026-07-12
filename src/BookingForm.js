@@ -57,36 +57,39 @@ export default function BookingForm() {
   // -------------------------------
   // Submit booking
   // -------------------------------
-  async function handleSubmit(e) {
-    e.preventDefault();
+async function handleSubmit(e) {
+  e.preventDefault();
 
-    if (submitting) return; // Prevent double-submit
-    setSubmitting(true);
+  if (submitting) return;
+  setSubmitting(true);
 
-    try {
-      const result = await createBooking(form);
+  try {
+    const result = await createBooking(form);
 
-      if (result.error === "Time slot already booked") {
-        alert("Sorry — that time has just been booked. Please choose another slot.");
-        setSubmitting(false);
-        return;
-      }
-
-      if (!result.bookingId) {
-        alert("Booking failed — no bookingId returned.");
-        setSubmitting(false);
-        return;
-      }
-
-      alert("Booking created! Please check your email to complete payment.");
-    } catch (err) {
-      console.error("🔥 BOOKING ERROR:", err);
-      alert("Booking failed — see console");
+    if (result.error === "Time slot already booked") {
+      alert("Sorry — that time has just been booked. Please choose another slot.");
+      setSubmitting(false);
+      return;
     }
 
-    setSubmitting(false);
+    if (!result.bookingId) {
+      alert("Booking failed — no bookingId returned.");
+      setSubmitting(false);
+      return;
+    }
+
+    // ⭐⭐⭐ THIS IS THE MISSING LINE ⭐⭐⭐
+    localStorage.setItem("bookingId", result.bookingId);
+
+    alert("Booking created! Please check your email to complete payment.");
+  } catch (err) {
+    console.error("🔥 BOOKING ERROR:", err);
+    alert("Booking failed — see console");
   }
 
+  setSubmitting(false);
+}
+  
   // -------------------------------
   // Render
   // -------------------------------
