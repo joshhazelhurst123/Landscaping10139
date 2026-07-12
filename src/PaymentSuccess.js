@@ -38,5 +38,10 @@ export default function PaymentSuccess() {
       <p>Your booking is now confirmed.</p>
       <p>A receipt has been emailed to you by PayPal.</p>
     </div>
+<p style={{ marginTop: "30px" }}>
+  <a href="/" style={{ fontSize: "18px" }}>
+    ← Back to Home
+  </a>
+</p>
   );
 }
