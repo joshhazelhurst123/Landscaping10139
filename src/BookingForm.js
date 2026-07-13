@@ -103,7 +103,7 @@ async function handleSubmit(e) {
         <a href="/Terms">Terms & Conditions</a>
       </nav>
 <p className="booking-price">
-  <strong>$80.00 per hour</strong> — Wellington region only
+  <strong>$80.00 per hour</strong> Pricing applies to Wellington & Porirua region bookings.
 </p>
 
       <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
