@@ -14,6 +14,10 @@ export default function Services() {
         <a href="/terms">Terms & Conditions</a>
       </nav>
 
+  <p className="booking-price">
+  <strong>$80.00 per hour</strong> — Wellington region only
+</p>
+
       {/* Header */}
       <header className="services-header">
         <h1>Our Landscaping Services</h1>
