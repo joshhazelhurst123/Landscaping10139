@@ -17,7 +17,11 @@ export default function Services() {
   <p className="booking-price">
   <strong>$80.00 per hour</strong> Pricing applies to Wellington & Porirua region bookings.
 </p>
-
+<p className="booking-price">If you would like to make a booking, go to the Bookings page to make a booking, please find a available time slot submit your contact 
+details, including your phone number, email address, and name. Once you have made a booking, an email will be sent to you with a payment link. You will then need
+to make a payment within 30 minutes or the booking will be deleted. Once payment has been made, you will receive a phone call or email confirming the booking. A 
+request for your address will be required. 
+</p>
       {/* Header */}
       <header className="services-header">
         <h1>Our Landscaping Services</h1>
