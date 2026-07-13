@@ -15,7 +15,7 @@ export default function Services() {
       </nav>
 
   <p className="booking-price">
-  <strong>$80.00 per hour</strong> — Wellington region only
+  <strong>$80.00 per hour</strong> Pricing applies to Wellington & Porirua region bookings.
 </p>
 
       {/* Header */}
