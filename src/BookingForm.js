@@ -102,6 +102,9 @@ async function handleSubmit(e) {
         <a href="/RefundPolicy">Refund Policy</a>
         <a href="/Terms">Terms & Conditions</a>
       </nav>
+<p className="booking-price">
+  <strong>$80.00 per hour</strong> — Wellington region only
+</p>
 
       <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
         <div className="booking-form-container">
