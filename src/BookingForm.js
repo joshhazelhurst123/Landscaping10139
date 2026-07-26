@@ -103,7 +103,7 @@ async function handleSubmit(e) {
         <a href="/Terms">Terms & Conditions</a>
       </nav>
 <p className="booking-price" style={{ textAlign: "center" }}>
-  <strong>$80.00 per hour</strong> Pricing applies to Wellington & Porirua region bookings.
+  <strong>$90.00 per hour</strong> Pricing applies to Wellington & Porirua region bookings.
 </p>
   <p className="booking-price">If you would like to make a booking, go to the Bookings page, please find an available time slot. Then submit your contact 
 details, including your phone number, email address, and name. Once you have made a booking, an email will be sent to you with a payment link. You will then need
